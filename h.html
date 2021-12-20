@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [
+        [1,2,3,4,5,6],
+        [2,3,4,6,8,9],
+        [2,9,0,7,5,3,8,9]
+    ];
+    let  max=arr[0].length;
+    for (i=0;i<arr.length;i++){
+        if (max<arr[i].length){
+            max=arr[i].length;
+        }
+    }
+
+    for (let i=0; i< max; i++) {
+        let maxValue = arr[0][max];
+        for (let j = 0; j < arr.length; j++) {
+
+            if (maxValue==undefined && arr[j][i]==undefined){
+                continue;
+            }
+            if (maxValue==undefined && typeof arr[j][i]=="number"){
+                maxValue=arr[j][i];
+            }
+            if ( maxValue < arr[j][i]){
+                maxValue= arr[j][i];
+            }
+        }
+        document.write( "giá trị lớn nhất của cột " + i + " là: " + maxValue+'<br>');
+    }
+</script>
+
+
+</body>
+</html>
